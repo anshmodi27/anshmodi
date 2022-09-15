@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/anshmodi/static/css/main.1a331796.css",
+    "main.js": "/anshmodi/static/js/main.0a334e49.js",
+    "static/media/Ansh Modi.pdf": "/anshmodi/static/media/Ansh Modi.019cab8093ec2818029a.pdf",
+    "static/media/About-min.png": "/anshmodi/static/media/About-min.00817fa96bbfbc331a02.png",
+    "static/media/test.webp": "/anshmodi/static/media/test.94f879d3cd4bc08d7f71.webp",
+    "static/media/About.webp": "/anshmodi/static/media/About.7da13bbdf415ac1c734e.webp",
+    "static/media/MA.webp": "/anshmodi/static/media/MA.1edebf84a3168f20d3b1.webp",
+    "index.html": "/anshmodi/index.html",
+    "main.1a331796.css.map": "/anshmodi/static/css/main.1a331796.css.map",
+    "main.0a334e49.js.map": "/anshmodi/static/js/main.0a334e49.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a331796.css",
+    "static/js/main.0a334e49.js"
+  ]
+}
