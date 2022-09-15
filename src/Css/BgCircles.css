@@ -1,0 +1,72 @@
+.bg-circles {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  max-width: 75rem;
+  width: calc(100% - 1.875rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bg-circles div {
+  position: absolute;
+  border-radius: 50%;
+}
+.bg-circles .circle1 {
+  height: 3.75rem;
+  width: 3.75rem;
+  background-color: var(--blue);
+  left: 5%;
+  top: 10%;
+  animation: zoomInOut 3s linear infinite;
+}
+.bg-circles .circle2 {
+  height: 5rem;
+  width: 5rem;
+  background-color: var(--main-color);
+  left: 30%;
+  top: 45%;
+  animation: bounceTop 5s ease-in-out infinite;
+}
+.bg-circles .circle3 {
+  height: 7.5rem;
+  width: 7.5rem;
+  background-color: var(--white);
+  right: -3.5rem;
+  top: 40%;
+  border-radius: 20%;
+  animation: rotate 5s linear infinite;
+}
+.bg-circles .circle4 {
+  height: 3.125rem;
+  width: 3.125rem;
+  background-color: var(--orange);
+  left: -1.5rem;
+  top: 80%;
+}
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@keyframes bounceTop {
+  0%,
+  100% {
+    transform: translateY(-3.125rem);
+  }
+  50% {
+    transform: translateY(0rem);
+  }
+}
+@keyframes rotate {
+  0%,
+  100% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,136 @@
+.flex-end {
+  justify-content: flex-end;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 1.25rem 0 0;
+}
+.header .nav-toggle {
+  width: 3.125rem;
+  height: 3.125rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.9375rem;
+  z-index: 1;
+}
+.header .logo {
+  /* max-width: 22.5rem; */
+  width: 12.75rem;
+  height: 12.75rem;
+  background-image: url("../Images/MA.png");
+  background-size: cover;
+  background-position-y: -50px;
+  background-repeat: no-repeat;
+}
+.nav-toggle.active {
+  position: fixed;
+}
+.header .nav-toggle span {
+  height: 0.125rem;
+  width: 1.5rem;
+  background-color: var(--main-color);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+.header .nav-toggle.active span {
+  background-color: transparent;
+}
+.header .nav-toggle span::after,
+.header .nav-toggle span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: all 0.3s ease;
+}
+.header .nav-toggle.active span::after {
+  transform: rotate(-45deg);
+}
+.header .nav-toggle.active span::before {
+  transform: rotate(45deg);
+}
+.header.nav.active .nav-toggle span::after,
+.header .nav-toggle span::before {
+  left: 0;
+  transform: translateY(-8px);
+}
+.header .nav-toggle span::after {
+  right: 0;
+  transform: translateY(8px);
+}
+.header .nav-toggle:not(.active):hover span::after,
+.header .nav-toggle:not(.active):hover span::before {
+  width: 50%;
+}
+.header .nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 2.1875rem 0.9375rem;
+  overflow-y: auto;
+  display: none;
+}
+.header .nav.active {
+  display: block;
+}
+.header .nav-inner {
+  min-height: calc(100vh - 4.375rem);
+  max-width: 75rem;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  border-radius: 1.875rem;
+  backdrop-filter: blur(25px);
+  padding: 3.125rem 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .nav-inner ul li {
+  list-style: none;
+  text-align: center;
+}
+.header .nav-inner ul li a {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  color: var(--dark-blue);
+  display: block;
+  font-weight: 500;
+  padding: 0.5rem 0.9375rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.header .nav-inner ul li a:hover {
+  color: var(--main-color);
+}
+.header .nav-inner ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50%;
+  width: 0%;
+  background-color: var(--white-alpha-25);
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+.header .nav-inner ul li a:hover:before {
+  width: 100%;
+}
