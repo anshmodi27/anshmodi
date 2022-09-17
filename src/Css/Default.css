@@ -72,6 +72,14 @@ section {
 section:last-child {
   margin-bottom: 0.5rem;
 }
+.container {
+  padding: 0 2.5rem;
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -135,14 +143,16 @@ button {
 Custom Scrollbar
 -------- */
 ::-webkit-scrollbar {
-  width: 0.3125rem;
+  width: 0.3125rem !important;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--main-color);
+  background-color: var(--main-color) !important;
+  border-radius: 1.25rem !important;
 }
-.hidden {
-  display: none !important;
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: var(--main-color) !important;
+  border-radius: 1.25rem !important;
 }

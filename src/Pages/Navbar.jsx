@@ -7,7 +7,17 @@ const Navbar = () => {
     <>
       <header className="header">
         <div className="container">
-          <div className="row flex-end">
+          <div className="row flex-space-between">
+            <div>
+              <a href="#Home">
+                {" "}
+                <img
+                  src={require("../Images/MA.webp")}
+                  alt=""
+                  className="nav-toggle"
+                />
+              </a>
+            </div>
             <button
               type="button"
               aria-label="menu"

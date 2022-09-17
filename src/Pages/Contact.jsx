@@ -1,9 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { FiTwitter, FiGithub, FiFacebook, FiLinkedin } from "react-icons/fi";
 import "../Css/Contact.css";
 
 const Contact = () => {
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    number: "",
+    subject: "",
+    message: "",
+  });
+
+  let name, value;
+  const postUserData = (event) => {
+    name = event.target.name;
+    value = event.target.value;
+    setUserData({ ...userData, [name]: value });
+  };
+
+  // Firebase
+
+  const submitData = async (event) => {
+    event.preventDefault();
+    const { name, email, number, subject, message } = userData;
+    if (name && email && number && subject && message) {
+      const res = await fetch(
+        "https://ansh-modi-default-rtdb.firebaseio.com/usersData.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            number,
+            subject,
+            message,
+          }),
+        }
+      );
+      if (res) {
+        setUserData({
+          name: "",
+          email: "",
+          number: "",
+          subject: "",
+          message: "",
+        });
+        alert("Call You Soon!");
+      } else {
+        alert("fill the data");
+      }
+    } else {
+      alert("fill the data");
+    }
+  };
+
   return (
     <>
       <section className="contact-section sec-padding" id="Contact">
@@ -15,13 +69,16 @@ const Contact = () => {
           </div>
           <div className="row">
             <div className="contact-form">
-              <form action="">
+              <form method="POST">
                 <div className="row">
                   <div className="input-group">
                     <input
                       type="text"
                       placeholder="Name"
+                      value={userData.name}
+                      onChange={postUserData}
                       className="input-control"
+                      name="name"
                       required
                     />
                   </div>
@@ -29,7 +86,10 @@ const Contact = () => {
                     <input
                       type="email"
                       placeholder="Email"
+                      value={userData.email}
+                      onChange={postUserData}
                       className="input-control"
+                      name="email"
                       required
                     />
                   </div>
@@ -37,7 +97,10 @@ const Contact = () => {
                     <input
                       type="tel"
                       placeholder="Mobile Number"
+                      value={userData.number}
+                      onChange={postUserData}
                       className="input-control"
+                      name="number"
                       pattern="[0-9]{3}[0-9]{4}[0-9]{3}"
                       required
                     />
@@ -46,14 +109,20 @@ const Contact = () => {
                     <input
                       type="text"
                       placeholder="Subject"
+                      value={userData.subject}
+                      onChange={postUserData}
                       className="input-control"
+                      name="subject"
                       required
                     />
                   </div>
                   <div className="input-group">
                     <textarea
                       placeholder="Message"
+                      value={userData.message}
+                      onChange={postUserData}
                       className="input-control"
+                      name="message"
                       required
                     />
                   </div>
@@ -62,6 +131,8 @@ const Contact = () => {
                       className="btn"
                       type="submit"
                       aria-label="Send Message"
+                      onClick={submitData}
+                      // onSubmit={sendMail}
                     >
                       Send Message
                     </button>
@@ -70,21 +141,6 @@ const Contact = () => {
               </form>
             </div>
             <div className="contact-info">
-              <div className="contact-info-item">
-                <div className="img-box">
-                  <picture>
-                    <source
-                      srcSet={require("../Images/MA.webp")}
-                      type="image/webp"
-                    />
-                    <source
-                      srcSet={require("../Images/MA-min.png")}
-                      type="image/png"
-                    />
-                    <img src={require("../Images/MA.png")} alt="Contact" />
-                  </picture>
-                </div>
-              </div>
               <div className="contact-info-item">
                 <h3>Email</h3>
                 <a href="mailto:anshmodi250+work@gmail.com" aria-label="Mail">

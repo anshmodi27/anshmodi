@@ -11,14 +11,6 @@
   position: absolute;
   border-radius: 50%;
 }
-.bg-circles .circle1 {
-  height: 3.75rem;
-  width: 3.75rem;
-  background-color: var(--blue);
-  left: 5%;
-  top: 10%;
-  animation: zoomInOut 3s linear infinite;
-}
 .bg-circles .circle2 {
   height: 5rem;
   width: 5rem;
@@ -42,6 +34,7 @@
   background-color: var(--orange);
   left: -1.5rem;
   top: 80%;
+  animation: zoomInOut 3s linear infinite;
 }
 @keyframes zoomInOut {
   0%,

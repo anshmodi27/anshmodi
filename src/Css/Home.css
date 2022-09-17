@@ -3,14 +3,6 @@
   margin: auto;
   position: relative;
 }
-.container {
-  padding: 0 2.5rem;
-  width: 100%;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
 .align-item-center {
   align-items: center;
 }
@@ -44,7 +36,7 @@ Home Section
   margin: 0 0.9375rem 0.9375rem 0;
 }
 .home-img {
-  max-width: 22.5rem;
+  max-width: 18.5rem;
   width: 18.75rem;
   height: 18.75rem;
   margin: auto;

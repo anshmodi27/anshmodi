@@ -6,7 +6,7 @@ import BgCircle from "./Pages/BgCircle";
 import "./Css/Default.css";
 import "./Css/Media.css";
 
-function App() {
+const App = () => {
   return (
     <>
       <BgCircle />
@@ -18,6 +18,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
